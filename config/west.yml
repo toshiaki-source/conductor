@@ -10,9 +10,10 @@ manifest:
       url-base: https://github.com/cormoran
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3
-      import: app/west.yml
+      remote: cormoran
+      revision: v0.3+custom-studio-protocol
+      import:
+        file: app/west.yml
     - name: zmk-pmw3610-driver
       remote: pite1222
       revision: main
@@ -23,10 +24,5 @@ manifest:
       remote: cormoran
       revision: main # or latest commit hash
       # Below setting required to use unofficial studio custom RPC feature
-    - name: zmk
-      remote: cormoran
-      revision: v0.3+custom-studio-protocol
-      import:
-      file: app/west.yml
   self:
     path: config
