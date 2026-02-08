@@ -30,6 +30,3 @@ manifest:
       file: app/west.yml
   self:
     path: config
-custom-studio-protocol
-      import:
-        file: app/west.yml
