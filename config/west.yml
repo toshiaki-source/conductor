@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/pite1222
     - name: caksoylar  # <-- new entry
       url-base: https://github.com/caksoylar
+    - name: cormoran
+      url-base: https://github.com/cormoran
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -17,5 +19,17 @@ manifest:
     - name: zmk-rgbled-widget  # <-- new entry
       remote: caksoylar
       revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main # or latest commit hash
+      # Below setting required to use unofficial studio custom RPC feature
+    - name: zmk
+      remote: cormoran
+      revision: v0.3+custom-studio-protocol
+      import:
+      file: app/west.yml
   self:
     path: config
+custom-studio-protocol
+      import:
+        file: app/west.yml
