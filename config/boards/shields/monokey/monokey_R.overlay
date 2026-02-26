@@ -82,6 +82,6 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         /* layer 5 の間はスクロールモード */
-        scroll-layers = <5>;
+        scroll-layers = <5 7>;
     };
 };
