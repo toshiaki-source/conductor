@@ -17,35 +17,33 @@
         ;
 };
 
-// 非マウスキーでAML解除（Jと左親指Backspaceも押してる間は解除しない）
+/* 非マウスキーでAML解除（ここに入ってるキーは押してもAMLが落ちない） */
 &zip_temp_layer {
     excluded-positions = <
         16  /* J */
         17  /* K */
         18  /* L */
-        35  /* 左親指BACKSPACE */
+        35  /* 左親指BACKSPACE位置 */
     >;
     require-prior-idle-ms = <400>;
 };
 
-// ★ラベル付きで定義（これが重要）
-/ {
+/* trackball listener（ラベル付き） */
+ / {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        /* AMLはそのまま */
+        /* AML：トラボ触ったら layer 4 を一時的に入れる */
         input-processors = <&zip_temp_layer 4 100000>;
 
-        /* layer7 の間だけ加速（押してる間だけ、に対応） */
+        /* layer 7 が有効な間だけ、XY＋スクロールを加速 */
         input-processors-layer-overrides {
-            layer7 {
-                layers = <7>;
-                input-processors = <
-                    &zip_xy_scaler 3 1
-                    &zip_scroll_scaler 3 1
-                >;
-            };
+            layers = <7>;
+            input-processors = <
+                &zip_xy_scaler 3 1
+                &zip_scroll_scaler 3 1
+            >;
         };
     };
 };
@@ -53,7 +51,7 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+            psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
                     <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
@@ -61,7 +59,7 @@
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+            psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
                     <NRF_PSEL(SPIM_MISO, 0, 4)>;
             low-power-enable;
@@ -83,6 +81,8 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+        /* layer 5 の間はスクロールモード */
         scroll-layers = <5>;
     };
 };
