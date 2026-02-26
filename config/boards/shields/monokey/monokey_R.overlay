@@ -32,11 +32,18 @@
 
 / {
     trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_temp_layer 4 100000>; // AML
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
 
+    /* AMLはそのまま */
+    input-processors = <&zip_temp_layer 4 100000>;
+
+    /* ここが “押してる間だけ加速” */
+    fast_when_layer7 {
+        layers = <7>;
+        input-processors = <&zip_xy_scaler 3 1>;
     };
+};
 };
 
 &pinctrl {
