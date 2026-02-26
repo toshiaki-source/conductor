@@ -25,6 +25,7 @@
 　　　　　16 // J
         17 // K
         18 // L
+　　　　　35  // 左親指BACKSPACE
     >;
     require-prior-idle-ms = <400>;
     // トラボ誤爆防止
