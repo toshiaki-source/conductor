@@ -23,7 +23,6 @@
         16  /* J */
         17  /* K */
         18  /* L */
-        35  /* 左親指BACKSPACE位置 */
     >;
     require-prior-idle-ms = <400>;
 };
