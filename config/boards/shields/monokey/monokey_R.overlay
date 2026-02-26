@@ -40,8 +40,12 @@
 
     /* ここが “押してる間だけ加速” */
     fast_when_layer7 {
-        layers = <7>;
-        input-processors = <&zip_xy_scaler 3 1>;
+    layers = <7>;
+    input-processors = <
+        &zip_xy_scaler 3 1
+        &zip_scroll_scaler 3 1
+    >;
+};
     };
 };
 };
