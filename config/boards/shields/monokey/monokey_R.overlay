@@ -24,7 +24,7 @@
         17  /* K */
         18  /* L */
     >;
-    require-prior-idle-ms = <700>;
+    require-prior-idle-ms = <500>;
 };
 
 /* trackball listener（ラベル付き） */
