@@ -73,7 +73,7 @@
         ARROW {
             bindings = <
 &trans  &trans  &kp LS(LC(NUMBER_1))  &kp LS(LC(NUMBER_2))  &kp LS(LC(NUMBER_3))            &kp LC(UP_ARROW)  &kp LC(LEFT_ARROW)  &kp UP_ARROW     &kp LC(RIGHT)    &kp LC(DOWN_ARROW)
-&trans  &trans  &kp LS(LC(NUMBER_4))  &kp LS(LC(N5))        &kp LS(LC(NUMBER_6))            &kp LC(A)         &kp LEFT_ARROW      &kp DOWN_ARROW   &kp RIGHT_ARROW  &kp LC(E)
+&trans  &trans  &kp LS(LC(NUMBER_4))  &kp LC(N5)            &kp LS(LC(NUMBER_6))            &kp LC(A)         &kp LEFT_ARROW      &kp DOWN_ARROW   &kp RIGHT_ARROW  &kp LC(E)
 &trans  &trans  &kp LS(LC(N7))        &kp LANG2             &kp LANG1                       &kp C_PREVIOUS    &kp LG(LEFT)        &trans           &kp RG(RIGHT)    &kp C_NEXT
 &trans  &trans  &trans                &kp GRAVE             &trans                &trans    &trans            &trans                               &kp C_BRI_DEC    &kp C_BRI_INC
             >;
