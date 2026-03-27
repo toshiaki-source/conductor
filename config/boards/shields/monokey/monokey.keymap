@@ -95,7 +95,7 @@
 &trans  &trans  &none   &trans        &trans            &none   &none   &trans  &trans  &none
 &none   &trans  &trans  &trans        &trans            &none   &mo 7   &none   &trans  &trans
 &trans  &trans  &trans  &trans        &trans            &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp LCOMMAND  &trans  &trans    &trans  &trans          &trans  &trans
+&trans &trans &trans &kp LCMD &trans &trans &trans &trans &trans &trans
             >;
         };
 
